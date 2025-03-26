@@ -1,0 +1,1 @@
+This part contains the websocket based connection part of the project, where two devices can talk, send json data and the client can display it in browser.
