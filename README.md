@@ -11,6 +11,6 @@ Team members:-
 
 Gaurav Joshi - 21110065
 
-Hussain Malwat - 21110117
+Husain Malwat - 21110117
 
 Mitansh Patel - 24120033
