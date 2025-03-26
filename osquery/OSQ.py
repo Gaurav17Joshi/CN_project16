@@ -6,7 +6,6 @@ import json
 import csv
 
 def safe_query_executor(query):
-    """Execute query with error handling"""
     try:
         instance = osquery.SpawnInstance()
         instance.open()
@@ -22,7 +21,6 @@ def safe_query_executor(query):
         return None
 
 def format_output(data):
-    """Format data with each column on a new line"""
     output = []
     for i, row in enumerate(data, 1):
         output.append(f"ROW {i}:")
@@ -32,7 +30,6 @@ def format_output(data):
     return "\n".join(output)
 
 def list_tables():
-    """List all available tables"""
     tables = safe_query_executor("SELECT name FROM osquery_registry WHERE registry = 'table'")
     if tables:
         print("\nAvailable Tables:\n")
@@ -43,12 +40,11 @@ def list_tables():
         print("No tables found")
 
 def generate_filename(base, output_arg):
-    """Generate filename based on command and format"""
+    #Generate filename based on command and format
     ext = output_arg.lower().lstrip('.') if output_arg else 'txt'
     return f"{base}.{ext}" if ext else base
 
 def save_output(data, output_arg, command_type, table_name=None):
-    """Save data to file"""
     try:
         if command_type == 'fetch':
             filename = generate_filename(table_name or 'table_output', output_arg)
@@ -72,7 +68,6 @@ def save_output(data, output_arg, command_type, table_name=None):
         print(f"Error saving output: {str(e)}")
 
 def fetch_table(table_name, limit=None, output_arg=None):
-    """Fetch table contents"""
     query = f"SELECT * FROM {table_name}"
     # Only apply LIMIT if explicitly specified and positive
     if limit is not None and limit > 0:
@@ -88,7 +83,6 @@ def fetch_table(table_name, limit=None, output_arg=None):
             print(format_output(data))
 
 def execute_custom_query(query, output_arg=None):
-    """Execute custom query"""
     data = safe_query_executor(query)
     if data:
         if output_arg is not None:
@@ -98,7 +92,6 @@ def execute_custom_query(query, output_arg=None):
             print(format_output(data))
 
 def loop_execution(func, interval, *args):
-    """Execute function repeatedly"""
     try:
         while True:
             os.system('cls' if os.name == 'nt' else 'clear')
