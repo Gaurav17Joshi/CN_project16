@@ -240,7 +240,7 @@ class NotificationClient:
             notification = {
                 "client_name": CLIENT_NAME,
                 "client_id": self.client_id,
-                "time": datetime.now().isoformat(),
+                "time": datetime.now().isoformat(timespec='milliseconds'),
                 "priority": priority,
                 "message": message,
                 "event_info": event_info

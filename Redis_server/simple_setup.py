@@ -1,7 +1,8 @@
 import redis
 
 # Redis connection settings
-REDIS_HOST = 'localhost'
+# REDIS_HOST = 'localhost'
+REDIS_HOST = '10.7.40.88'
 REDIS_PORT = 6379
 
 # Queue names

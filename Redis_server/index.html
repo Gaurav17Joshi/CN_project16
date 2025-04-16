@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monitoring Dashboard</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Monitoring Dashboard</h1>
+
+    <div class="controls">
+        <div class="control-buttons">
+            <a href="{from_now_url}" class="from-now-btn">Show From Now</a>
+            <a href="/" class="show-all-btn">Show All</a>
+            <a href="javascript:window.location.reload()" class="refresh-btn">Refresh Current View</a>
+        </div>
+        <div class="event-count">{event_count} Event(s) Displayed</div>
+        {filter_info_html}
+    </div>
+
+    <div class="event-list">
+        {event_cards}
+    </div>
+
+    <!-- Load the JavaScript file -->
+    <script src="dashboard.js"></script>
+</body>
+</html>
