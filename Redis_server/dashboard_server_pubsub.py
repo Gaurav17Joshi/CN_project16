@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import json
 import time
 import redis
@@ -58,7 +57,7 @@ class DashboardHTTPRequestHandler(BaseHTTPRequestHandler):
         
         # Handle static file requests
         if parsed_path.path.startswith('/static/'):
-            self.serve_static_file(parsed_path.path[8:])  # Remove '/static/' prefix
+            self.serve_static_file(parsed_path.path[8:])  
             return
             
         # Handle other known static files

@@ -31,9 +31,7 @@ async def handle_websocket(websocket, *args, **kwargs):
             # Newer versions of websockets
             await websocket.wait_closed()
         else:
-            # Older versions - keep connection open with ping/pong
             while True:
-                # Wait for the client to close the connection
                 message = await websocket.recv()
                 if message == "ping":
                     await websocket.send("pong")
@@ -63,7 +61,6 @@ async def broadcast_message(message="refresh"):
         
     print(f"Broadcasting '{message}' to {len(connected_clients)} clients...")
     
-    # Create tasks for sending to each client concurrently
     tasks = []
     failed_clients = []
     
@@ -113,7 +110,6 @@ def schedule_broadcast(message="refresh"):
                 broadcast_message(message), 
                 websocket_loop
             )
-            # Optionally wait for the result with a timeout
             # result = future.result(timeout=1)
         except Exception as e:
             print(f"Error scheduling broadcast: {e}")

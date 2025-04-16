@@ -20,16 +20,11 @@ class EventManager:
     def log_event(self, event_data):
         """Log an event to the log file."""
         try:
-            # Add server timestamp to the event
             if isinstance(event_data, str):
-                # Parse the JSON string
                 event_dict = json.loads(event_data)
-                # Add server timestamp
                 event_dict['server_time'] = datetime.now(timezone.utc).isoformat()
-                # Convert back to JSON string
                 json_data = json.dumps(event_dict)
             else:
-                # It's already a dictionary
                 event_data['server_time'] = datetime.now(timezone.utc).isoformat()
                 json_data = json.dumps(event_data)
                 
