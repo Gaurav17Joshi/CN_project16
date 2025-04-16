@@ -15,4 +15,4 @@ fi
 
 # Start the dashboard server
 echo "Starting the monitoring dashboard server..."
-python3 dashboard_server.py
+python3 dashboard_server_pubsub.py
