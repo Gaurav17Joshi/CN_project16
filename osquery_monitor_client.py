@@ -12,7 +12,7 @@ import osquery
 #############################################################
 # REDIS CONNECTION SETTINGS - DO NOT CHANGE UNLESS NEEDED
 #############################################################
-REDIS_HOST = '10.7.40.88'  # Remote Redis server IP
+REDIS_HOST = 'localhost'  # Remote Redis server IP (or brokers ip)
 REDIS_PORT = 6379
 HIGH_PRIORITY_QUEUE = 'monitoring:high'
 LOW_PRIORITY_QUEUE = 'monitoring:low'

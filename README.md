@@ -130,4 +130,4 @@ pip install redis websockets
    ```
    (Keep this terminal running)
 
-3. **Access the Dashboard**: Open your web browser to `http://<SERVER_IP>:8000` (e.g., `http://localhost:8000` or `http://10.7.40.88:8000`).
+3. **Access the Dashboard**: Open your web browser to `http://<SERVER_IP>:8000` (e.g., `http://localhost:8000` or `your ip`).

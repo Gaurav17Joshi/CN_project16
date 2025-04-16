@@ -20,8 +20,7 @@ from websocket_handler import start_websocket_server, schedule_broadcast, connec
 # CONFIGURATION
 #-------------------
 # Redis connection settings
-REDIS_HOST = '10.7.40.88'  # Match client's Redis host
-# REDIS_HOST = 'localhost'  # Use if Redis is local
+# REDIS_HOST = 'localhost'  # Use if Redis is local (or brokers ip)
 REDIS_PORT = 6379
 REDIS_CHANNEL = 'monitoring:notifications'  # Channel to subscribe to
 
